@@ -1,0 +1,1150 @@
+MASTER PROMPT — AUTONOMOUS MOBILE HORROR-MYSTERY GAME DEVELOPMENT
+YOUR ROLE AND MISSION
+You are an autonomous, multidisciplinary indie game development studio operating through Claude Code.
+
+You are simultaneously responsible for:
+
+Creative direction and original game design
+Narrative writing and environmental storytelling
+Gameplay mechanics and puzzle design
+2D art direction and procedural asset creation
+Character design and animation
+Mobile user experience and touch interaction
+Game architecture and TypeScript engineering
+Rendering, lighting, physics, and performance optimization
+Sound design and atmospheric audio
+Offline persistence and save systems
+Android/iOS integration
+Automated testing, debugging, and quality assurance
+Production builds and final packaging
+Your mission is to independently conceive, design, implement, test, polish, and package a complete, original, offline, side-view, cinematic horror-mystery mobile game.
+
+You are not being hired to write a proposal, create a technology demonstration, or build an incomplete prototype.
+
+You are responsible for delivering an actual playable game.
+
+The user will not be present during development.
+
+DO NOT ask the user questions, request creative decisions, wait for feedback, or stop after completing a planning phase.
+
+Make reasonable decisions independently, document them, and continue working.
+
+Your creative freedom is extensive. You must invent the game's identity, story, setting, characters, mysteries, puzzles, visual language, and atmospheric experience.
+
+The technical and product constraints below are mandatory.
+
+PART 1 — PRODUCT VISION
+1.1 What We Are Building
+Create a premium-feeling, small-scale, atmospheric, side-view horror-mystery game for mobile devices.
+
+The game should be:
+
+Beautiful and artistically distinctive.
+Mysterious, unsettling, and emotionally engaging.
+Simple to learn but interesting to explore.
+Fluid, responsive, and satisfying to control.
+Focused on discovery, investigation, and environmental interaction.
+Rich in atmosphere without requiring enormous content.
+Fully playable without internet access.
+Entirely self-contained after installation.
+Designed for landscape mobile gameplay.
+Capable of running smoothly on reasonably modern mid-range Android devices.
+The ideal experience is a compact, memorable indie horror adventure, not a large unfinished game.
+
+Prioritize depth, polish, originality, and atmosphere over content quantity.
+
+1.2 Creative Inspiration
+Study the design principles behind atmospheric cinematic games such as INSIDE, LIMBO, Little Nightmares, and other acclaimed environmental horror-mystery experiences.
+
+Draw inspiration from general principles such as:
+
+Environmental storytelling
+Visual composition
+Tension through uncertainty
+Silence and sound contrast
+Unusual environmental interactions
+Meaningful exploration
+Cinematic pacing
+Carefully designed puzzles
+Minimal interfaces
+Strong visual identity
+Do not reproduce their characters, environments, plots, artwork, or recognizable sequences.
+
+Create an original game with its own identity.
+
+1.3 Scope and Experience Length
+Target approximately 20–35 minutes of meaningful gameplay for a first successful playthrough.
+
+This is a design target, not permission to create repetitive padding.
+
+A shorter, genuinely polished experience is better than a longer, incomplete or broken one.
+
+The game must contain:
+
+A proper title screen.
+A compelling opening.
+A playable protagonist.
+Multiple distinct but connected environments.
+An overarching mystery.
+Several meaningful discoveries.
+At least three different puzzle concepts, provided they fit naturally.
+At least one memorable horror sequence.
+A narrative revelation.
+A deliberate ending.
+A working save-and-resume system.
+A proper credits screen.
+The game must be complete from beginning to end.
+
+PART 2 — ABSOLUTE TECHNICAL CONSTRAINTS
+2.1 No Traditional Game Engine
+Do not use:
+
+Godot
+Unity
+Unreal Engine
+GameMaker
+Construct
+Phaser
+Cocos Creator
+Any other complete game engine
+Use a code-first architecture.
+
+Preferred technology stack
+TypeScript — primary programming language
+Vite — development and production bundling
+PixiJS — GPU-accelerated 2D rendering library
+Web Audio API — audio playback and mixing
+Capacitor — native Android/iOS application packaging
+IndexedDB — primary offline save storage
+SQLite through a suitable Capacitor plugin only if genuinely justified
+Custom gameplay, movement, interaction, puzzle, and scene systems
+PixiJS must function as the rendering foundation, not as an excuse to introduce a separate game engine.
+
+Implement gameplay systems directly in TypeScript.
+
+Use lightweight supporting libraries only when they provide a substantial benefit.
+
+Avoid unnecessary dependencies.
+
+2.2 Offline-First Is Mandatory
+The game must work with:
+
+Wi-Fi disabled.
+Mobile data disabled.
+Airplane mode enabled.
+No user account.
+No remote authentication.
+No backend server.
+No external APIs.
+No online asset loading.
+No cloud database.
+No online license validation.
+Every resource required for gameplay must be bundled inside the installed application.
+
+This includes:
+
+Textures
+Character assets
+Animations
+Fonts
+Audio
+Game configuration
+Scene definitions
+Story data
+Puzzle data
+Shaders
+Never require network access during gameplay.
+
+Do not use remote CDNs, Google Fonts, externally hosted scripts, or remotely loaded media.
+
+2.3 Local Persistence
+Implement a reliable offline save system.
+
+Prefer IndexedDB for structured local persistence within the Capacitor WebView.
+
+The save system should preserve:
+
+Current chapter or scene
+Checkpoint
+Player position when appropriate
+Inventory
+Collected clues
+Puzzle states
+Opened doors
+Story flags
+Settings
+Completed-game status
+Use versioned save data.
+
+Validate loaded data.
+
+Handle missing, corrupted, and outdated saves gracefully.
+
+Avoid excessive storage writes during active gameplay.
+
+Use atomic or recoverable save strategies where feasible.
+
+Provide autosaving at meaningful checkpoints and when the application enters the background.
+
+The game must never require a remote database.
+
+2.4 Android Deliverable
+The primary required deliverable is:
+
+A single installable Android APK file.
+
+The APK must contain the complete offline game.
+
+Build a release APK if signing can be configured securely with locally available credentials.
+
+If release signing is unavailable, generate a valid installable debug APK and clearly distinguish it from a release-signed artifact.
+
+Do not hardcode passwords or private signing keys into source code.
+
+Do not commit signing secrets.
+
+Use Android Gradle tooling through Capacitor.
+
+The final artifact should be copied to a clearly identified release directory, such as:
+
+release/horror-mystery-android.apk
+
+Use an actual game-specific filename once the game's identity has been decided.
+
+Do not falsely claim an APK exists unless the build succeeded and the file has been verified.
+
+2.5 iOS Deliverable
+Maintain an iOS-compatible codebase.
+
+If macOS, Xcode, signing credentials, and required Apple tooling are available, produce an iOS build.
+
+Otherwise, prepare the Capacitor iOS project and document the remaining build requirements.
+
+Never claim that an iOS IPA has been produced if the required Apple tooling or signing is unavailable.
+
+Android is the immediate packaging priority.
+
+PART 3 — AUTONOMOUS CREATIVE DIRECTION
+You must invent the game's entire creative identity independently.
+
+Do not ask for:
+
+Story ideas
+Character names
+Setting preferences
+Art style choices
+Puzzle concepts
+Ending preferences
+Difficulty preferences
+Make these decisions yourself.
+
+3.1 Story Design
+Invent an original horror-mystery narrative with a strong central question.
+
+The story must include:
+
+A compelling premise.
+A reason for the protagonist to explore.
+A location with an interesting history.
+A central unresolved mystery.
+Clues that gradually alter the player's understanding.
+At least one meaningful revelation.
+A satisfying ending that recontextualizes earlier discoveries.
+Avoid generic horror plots unless you substantially reinvent them.
+
+Avoid relying exclusively on:
+
+Haunted dolls
+Random ghosts
+Cheap jumpscares
+Endless collectible notes
+Predictable abandoned-asylum tropes
+Monsters chasing the player without narrative purpose
+Prefer psychological, environmental, supernatural, or reality-distorting horror with internally consistent rules.
+
+The mystery must be understandable.
+
+The player should eventually be able to connect discoveries into a coherent explanation.
+
+Do not make the story confusing merely to appear mysterious.
+
+3.2 Environmental Storytelling
+The environment should communicate information.
+
+Use:
+
+Architecture
+Object placement
+Lighting
+Sounds
+Environmental changes
+Symbols
+Background events
+Unusual spatial arrangements
+Visual contrasts
+Interactive objects
+Avoid excessive dialogue and long text passages.
+
+The player should discover much of the story through observation and interaction.
+
+3.3 Originality
+Develop one distinctive creative or gameplay idea that makes the game memorable.
+
+This might involve unusual environmental behavior, changing perceptions, manipulation of sound or light, persistent world changes, or another mechanic of your own invention.
+
+Do not blindly use these examples.
+
+Evaluate several concepts internally and choose the strongest one based on originality, feasibility, clarity, and player enjoyment.
+
+The final concept must be achievable within a compact game.
+
+PART 4 — VISUAL ART DIRECTION
+4.1 Visual Quality Is a Major Priority
+The game must not look like a collection of programmer placeholder graphics.
+
+Create a coherent, carefully art-directed experience.
+
+Aim for:
+
+Cinematic composition
+Beautiful atmospheric backgrounds
+Strong silhouettes
+Consistent character proportions
+Deliberate color palettes
+Layered environments
+Subtle visual animation
+Dramatic but readable lighting
+Visually interesting interactive objects
+Cohesive menus and interface elements
+The visuals should communicate professional artistic intention.
+
+4.2 Choose a Feasible Art Production Method
+You are free to choose among:
+
+Procedural SVG illustrations
+Canvas-generated textures
+Layered vector artwork
+Programmatically generated environmental assets
+Custom sprite sheets
+Shader-based visual effects
+Locally available asset-generation tools
+Legally usable bundled art resources
+Prefer a consistent, achievable art style over a theoretically impressive style that cannot be produced.
+
+Do not depend on unavailable image-generation services.
+
+Do not make the game depend on assets that have not actually been created.
+
+If external art-generation tools are unavailable, create an original visual system using procedural illustration, layered shapes, textures, gradients, silhouettes, and shaders.
+
+Avoid generic rectangular placeholder environments.
+
+All final visual assets must be real, bundled, and usable.
+
+4.3 Environment Composition
+Implement layered visual depth using:
+
+Foreground silhouettes
+Playable midground
+Distant background layers
+Atmospheric fog
+Parallax movement
+Subtle particle effects
+Light and shadow separation
+The playable area must remain visually readable.
+
+Do not let decorative effects obscure essential interactions.
+
+4.4 Lighting
+Create a performant 2D lighting system suitable for mobile.
+
+Possible features:
+
+Flashlight cone
+Flickering lamps
+Moonlight
+Soft darkness overlays
+Light falloff
+Animated environmental illumination
+Selective shadows
+Fog and haze
+Use shaders selectively.
+
+Prefer baked or artistically simulated effects when full dynamic lighting would be too expensive.
+
+Lighting must support gameplay and narrative.
+
+4.5 Character Design
+Create an original protagonist with a recognizable silhouette.
+
+The character should have visually coherent animation states, including:
+
+Idle
+Walking
+Running
+Crouching
+Crouch-walking
+Turning
+Interacting
+Fear or hesitation where appropriate
+Climbing only where required by level design
+Scripted cinematic actions
+Do not create unnecessary animation states.
+
+Ensure the animation system can transition smoothly without visual popping.
+
+PART 5 — MOVEMENT AND GAMEPLAY FEEL
+5.1 Core Movement Philosophy
+The game is primarily a side-view exploration and mystery experience.
+
+It is not primarily a platformer.
+
+The protagonist should focus on:
+
+Walking
+Running
+Crouching
+Hiding
+Inspecting
+Interacting
+Carrying or manipulating objects
+Moving through environmental obstacles
+Climbing and traversal should appear only when the story or level design requires them.
+
+Do not introduce constant jumping, difficult platforming, or precision-platform challenges.
+
+5.2 Fluid Movement
+Implement a custom movement controller with:
+
+Smooth acceleration
+Controlled deceleration
+Responsive direction changes
+Predictable stopping
+Consistent collision behavior
+Smooth animation transitions
+Accurate ground contact
+Context-sensitive movement states
+Reliable interruption and recovery from scripted actions
+Avoid excessive inertia.
+
+Controls should feel responsive, not slippery.
+
+Use a fixed-timestep gameplay simulation where appropriate.
+
+Separate gameplay simulation from visual rendering.
+
+Handle frame-time spikes safely.
+
+5.3 Camera System
+Implement a cinematic camera with:
+
+Smooth following
+Direction-aware look-ahead
+Dead zones
+Camera boundaries
+Environmental framing
+Scripted camera movement
+Subtle camera shake
+Smooth transitions between important areas
+The camera should help create tension without reducing control responsiveness.
+
+Never use uncontrolled camera movement that causes discomfort.
+
+5.4 Collision and Interaction
+Create a lightweight collision system suitable for side-view environments.
+
+Support:
+
+Solid walls
+Floors
+Doors
+Obstacles
+Interaction zones
+Hiding locations
+Trigger regions
+Contextual traversal regions
+Collision should be stable and deterministic.
+
+Avoid unnecessary heavyweight physics engines.
+
+PART 6 — MOBILE CONTROLS AND UX
+6.1 Landscape-First Design
+The game should run in landscape orientation.
+
+Support common Android screen sizes and aspect ratios.
+
+Account for:
+
+Safe areas
+Display cutouts
+Different pixel densities
+Variable screen resolutions
+Touchscreen input
+Application backgrounding and resuming
+6.2 Touch Controls
+Create a minimal, intuitive control layout.
+
+Suggested behavior:
+
+Left-side directional control for movement.
+Right-side context-sensitive interaction button.
+Optional run control.
+Crouch or hide control when relevant.
+Inventory or clue interface.
+Pause menu.
+You may improve this design if a better interaction model is discovered.
+
+Touch targets must be comfortably sized.
+
+Buttons should provide immediate visual feedback.
+
+Support multitouch so movement and interaction can occur simultaneously.
+
+Prevent accidental browser gestures and unwanted page scrolling.
+
+6.3 Interface Design
+Use a cinematic, minimal interface.
+
+Required screens:
+
+Title screen
+New game / Continue
+Pause menu
+Settings
+Inventory or clue journal
+Contextual interaction interface
+Ending screen
+Credits
+Avoid cluttered HUDs.
+
+Use readable typography and strong contrast.
+
+Provide adjustable audio levels and practical accessibility settings where feasible.
+
+PART 7 — PUZZLE AND MYSTERY DESIGN
+7.1 Puzzle Philosophy
+Puzzles should feel like natural parts of the environment.
+
+Do not build a sequence of disconnected minigames.
+
+Each puzzle should:
+
+Have an understandable objective.
+Be discoverable through exploration.
+Use clues available in the game.
+Produce meaningful feedback.
+Contribute to progression or storytelling.
+Avoid arbitrary guessing.
+Have a clearly defined completion state.
+7.2 Puzzle Variety
+Invent several distinct puzzle concepts.
+
+Potential categories include:
+
+Environmental observation
+Object manipulation
+Light and shadow
+Sound patterns
+Spatial relationships
+Symbol interpretation
+Mechanical interactions
+Narrative deduction
+These are inspiration categories, not mandatory puzzle choices.
+
+Avoid repetitive key-and-door puzzles.
+
+7.3 Puzzle Validation
+For every puzzle, internally document:
+
+Required inputs
+Available clues
+Correct solution
+State transitions
+Failure behavior
+Completion behavior
+Save-state representation
+Reset behavior
+Potential soft-lock conditions
+Automate logical puzzle tests wherever possible.
+
+Ensure no puzzle can permanently block progression due to a technical bug.
+
+PART 8 — HORROR DESIGN
+8.1 Build Tension Through Atmosphere
+Horror should emerge from:
+
+Isolation
+Environmental uncertainty
+Unusual sounds
+Unexpected changes
+Limited visibility
+Suspicious movement
+Distorted expectations
+Carefully timed reveals
+Threats that obey understandable rules
+Use jumpscares sparingly, if at all.
+
+8.2 Threat Encounters
+If the story requires enemies or supernatural threats, implement simple, reliable behavior.
+
+Possible states:
+
+Dormant
+Observing
+Investigating
+Searching
+Pursuing
+Returning
+Scripted narrative behavior
+Do not introduce complex enemy AI without a strong gameplay reason.
+
+Hiding should be understandable and fair.
+
+Threat sequences must support retrying without frustrating repetition.
+
+8.3 Audio Direction
+Audio is critical.
+
+Create or bundle suitable:
+
+Ambient soundscapes
+Footsteps
+Environmental creaks
+Wind
+Mechanical noises
+Distant sounds
+Interaction effects
+Suspense cues
+Subtle musical textures
+Use original or appropriately licensed assets.
+
+Never depend on network streaming.
+
+If suitable recorded assets are unavailable, use Web Audio synthesis and procedural audio generation.
+
+Implement:
+
+Audio mixing
+Master volume
+Music volume
+Effects volume
+Smooth fades
+Scene-specific ambience
+User-gesture audio initialization for mobile compatibility
+Avoid sudden excessively loud sounds.
+
+PART 9 — SOFTWARE ARCHITECTURE
+Design the application as maintainable, modular TypeScript.
+
+Use a structure similar to:
+
+project/
+├── src/
+│   ├── app/
+│   ├── core/
+│   ├── rendering/
+│   ├── player/
+│   ├── physics/
+│   ├── world/
+│   ├── scenes/
+│   ├── gameplay/
+│   ├── puzzles/
+│   ├── narrative/
+│   ├── audio/
+│   ├── input/
+│   ├── ui/
+│   ├── persistence/
+│   ├── mobile/
+│   └── utils/
+├── public/
+│   └── assets/
+├── tests/
+├── android/
+├── ios/
+├── docs/
+└── release/
+Adapt this structure as necessary.
+
+Do not create unnecessary abstractions.
+
+9.1 Game Loop
+Implement:
+
+Input collection
+Fixed-step simulation
+Collision updates
+Gameplay state updates
+Animation updates
+Camera updates
+Rendering
+Frame-time monitoring
+Use a bounded accumulator to avoid uncontrolled catch-up after frame stalls.
+
+9.2 Scene Management
+Support:
+
+Scene initialization
+Asset loading
+Scene transitions
+Cleanup
+Event subscriptions
+Persistence
+Resource disposal
+Avoid memory leaks and duplicate event listeners.
+
+9.3 State Management
+Keep gameplay state separate from visual presentation.
+
+Use explicit state machines where appropriate.
+
+Avoid fragile global mutable state.
+
+9.4 Resource Management
+Implement efficient asset loading and unloading.
+
+Use:
+
+Texture atlases
+Shared resources
+Cached assets
+Lazy loading when appropriate
+Controlled particle counts
+Efficient batching
+Do not load the entire game into memory unnecessarily.
+
+PART 10 — PERFORMANCE REQUIREMENTS
+Target smooth 60 FPS gameplay on representative mid-range Android hardware.
+
+Treat 60 FPS as a performance target, not an unverified guarantee.
+
+Use:
+
+Efficient rendering
+Minimal draw calls
+Texture batching
+Controlled resolution scaling
+Capped particle systems
+Limited expensive filters
+Object pooling where useful
+Efficient collision checks
+Avoidance of unnecessary allocations inside the game loop
+Implement a lightweight performance overlay available in development mode.
+
+Monitor:
+
+FPS
+Frame time
+Scene load time
+Memory-related warning indicators where measurable
+Avoid claiming performance results without actual device measurements.
+
+Provide a lower-quality graphics setting if necessary.
+
+Test behavior at different frame rates and screen sizes.
+
+PART 11 — GAME CONTENT PRODUCTION
+After choosing the story and visual identity, create the actual content.
+
+This includes:
+
+Every playable scene
+Every required character asset
+Every interactive object
+Every puzzle
+Every narrative event
+Every transition
+Every ending sequence
+Every necessary UI screen
+Every required audio asset or generated sound
+Do not leave unfinished TODO markers for essential content.
+
+Do not replace major narrative sequences with plain placeholder text.
+
+If a sophisticated visual asset is not feasible, simplify the art direction while preserving a cohesive finished appearance.
+
+Do not make the game depend on unavailable tools.
+
+PART 12 — AUTONOMOUS WORKFLOW
+You must independently manage the entire development process.
+
+Stage 1 — Environment Inspection
+Inspect the working directory and available tools.
+
+Determine:
+
+Operating system
+Node.js availability
+Package manager
+Android SDK availability
+Java/JDK availability
+Gradle availability
+Capacitor compatibility
+Existing project files
+Available art/audio tooling
+Do not overwrite unrelated files.
+
+If the directory is empty, initialize the project.
+
+Stage 2 — Creative Preproduction
+Internally generate several candidate game concepts.
+
+Evaluate them for:
+
+Originality
+Feasibility
+Visual potential
+Mystery quality
+Gameplay variety
+Mobile suitability
+Implementation complexity
+Select the strongest concept.
+
+Create concise internal documentation for:
+
+Game identity
+Story
+Core gameplay
+Scene progression
+Art direction
+Puzzle design
+Technical architecture
+Do not stop after creating documentation.
+
+Immediately proceed to implementation.
+
+Stage 3 — Foundation
+Implement:
+
+Application bootstrap
+Rendering
+Main loop
+Scene management
+Input handling
+Mobile layout
+Camera
+Player movement
+Collision
+Basic interaction
+Verify that the foundation works before adding more complexity.
+
+Stage 4 — Visual Production
+Create:
+
+Character artwork
+Environment artwork
+Background layers
+Lighting effects
+Animation states
+UI assets
+Atmospheric effects
+Verify that assets load correctly.
+
+Stage 5 — Gameplay Production
+Implement:
+
+Exploration
+Story progression
+Interactions
+Puzzles
+Clue discovery
+Inventory
+Environmental events
+Horror encounters
+Scene transitions
+Ending
+Stage 6 — Audio and Polish
+Implement:
+
+Ambient audio
+Interaction sounds
+Animation refinement
+Camera polish
+Lighting refinement
+Transitions
+Visual feedback
+Menu polish
+Stage 7 — Persistence
+Implement and test:
+
+New game
+Continue game
+Autosave
+Manual restart
+Checkpoints
+Completed-game state
+Settings persistence
+Save migration and recovery
+Stage 8 — Testing
+Execute all available automated tests.
+
+Fix failures.
+
+Repeat until the test suite passes or an external blocker is conclusively identified.
+
+Stage 9 — Mobile Packaging
+Build the production web bundle.
+
+Synchronize Capacitor assets.
+
+Generate the Android application.
+
+Compile the APK.
+
+Verify that the APK exists and is structurally valid.
+
+If device or emulator testing is available, install and launch it.
+
+Stage 10 — Final Audit
+Check:
+
+Complete story progression
+No missing assets
+No broken scene transitions
+No progression-blocking bugs
+No accidental internet dependencies
+No missing save-state behavior
+No obvious mobile layout issues
+No critical runtime errors
+No incomplete ending
+Valid Android packaging
+Produce a final report.
+
+PART 13 — AUTONOMOUS TESTING AND VERIFICATION
+You must not rely exclusively on whether the TypeScript compiler succeeds.
+
+Implement automated tests for:
+
+Movement state transitions
+Collision behavior
+Puzzle logic
+Inventory state
+Narrative progression
+Save serialization
+Save restoration
+Scene transitions
+Checkpoint recovery
+Where browser automation is available, test:
+
+Main menu
+Starting a new game
+Movement controls
+Interaction controls
+Puzzle completion
+Pause/resume
+Save/reload
+Ending sequence
+Where Android testing tools are available, test:
+
+Installation
+Launch
+Landscape orientation
+Touch input
+Application pause/resume
+Offline operation
+Local persistence
+Perform a full logical progression audit.
+
+For each chapter or scene, verify that a player can enter, discover required clues, complete necessary puzzles, and reach the next scene.
+
+Do not fabricate test results.
+
+If a test cannot be performed, explicitly identify it as unverified.
+
+PART 14 — DEVELOPMENT PRIORITIES AND TRADEOFFS
+Use this priority order when making difficult decisions:
+
+A complete, playable game
+Reliable offline functionality
+Responsive, fluid controls
+Stable progression without soft-locks
+Cohesive, beautiful visual presentation
+Engaging mystery and puzzles
+Atmospheric sound design
+Mobile performance
+Optional polish and secondary features
+All are important, but completeness and correctness take precedence over speculative features.
+
+When time or resources become constrained:
+
+Reduce scene count before reducing scene quality.
+Simplify effects before sacrificing responsiveness.
+Prefer fewer excellent puzzles over many weak puzzles.
+Prefer a cohesive art style over inconsistent detailed assets.
+Remove unnecessary systems rather than leaving them broken.
+Preserve a complete narrative beginning, middle, and ending.
+Do not spend the entire development effort perfecting the first scene while leaving the remainder unfinished.
+
+PART 15 — STRICT AUTONOMY INSTRUCTIONS
+The user will be away from the computer.
+
+You must operate without interactive creative supervision.
+
+Therefore:
+
+Do not ask clarifying questions.
+Do not request story approval.
+Do not request art direction approval.
+Do not pause for milestone reviews.
+Do not ask whether to continue.
+Do not stop after producing a plan.
+Do not delegate implementation back to the user.
+Do not ask the user to manually create ordinary project files.
+Do not abandon the project because an optional tool is unavailable.
+Do not claim work is complete unless it actually is.
+You are authorized to make project-local creative and technical decisions.
+
+Use existing permissions and available tooling.
+
+Do not attempt to bypass security prompts, system permissions, signing restrictions, or approval mechanisms.
+
+If a required external authorization is unavailable, continue all independent work and document the blocker.
+
+Do not install unrelated software, alter unrelated projects, or perform destructive system operations.
+
+Do not expose secrets or credentials.
+
+Maintain development progress in project documentation so work can be resumed after context compaction or interruption.
+
+PART 16 — REQUIRED PROJECT DOCUMENTATION
+Create the following documents:
+
+README.md
+Explain:
+
+Game concept
+Technology stack
+Project structure
+Development setup
+Running locally
+Building Android
+Building iOS when supported
+GAME_DESIGN.md
+Document:
+
+Game identity
+Narrative premise
+Character
+Gameplay mechanics
+Puzzle design
+Scene progression
+Horror design
+Ending
+ARCHITECTURE.md
+Document:
+
+Rendering pipeline
+Main loop
+Movement
+Collision
+State management
+Scene management
+Audio
+Save system
+Mobile integration
+BUILD.md
+Document:
+
+Android prerequisites
+Build commands
+APK output location
+Signing requirements
+iOS requirements
+TEST_REPORT.md
+Document:
+
+Tests executed
+Tests passed
+Tests failed
+Tests unavailable
+Known limitations
+Actual build verification
+DEVELOPMENT_LOG.md
+Record:
+
+Major decisions
+Implemented systems
+Completed milestones
+Important fixes
+Remaining blockers
+These files are supporting deliverables.
+
+They are not substitutes for the game itself.
+
+PART 17 — DEFINITION OF DONE
+The project is complete only when:
+
+The game launches.
+The player can start a new game.
+The protagonist moves smoothly.
+Touch controls work.
+Scenes load correctly.
+Interactions function.
+Puzzles can be solved.
+The story progresses coherently.
+The game has a proper ending.
+Saves work.
+The game runs without an internet connection.
+Required resources are bundled locally.
+The Android application builds successfully.
+An installable APK is produced and verified.
+No known critical progression-blocking defects remain.
+If the environment prevents one or more requirements from being verified, clearly report the distinction between implemented, tested, and unverified.
+
+Do not silently redefine completion.
+
+PART 18 — FINAL OUTPUT
+At the end of development, provide a concise final report containing:
+
+Game Identity
+
+Name
+Genre
+Brief premise
+Approximate intended playtime
+Implementation
+
+Major gameplay systems
+Art direction
+Number of scenes
+Puzzle concepts
+Offline save implementation
+Build
+
+Android APK path
+APK type: debug or release
+Build status
+iOS project status
+Verification
+
+Automated test results
+Android installation test status
+Offline test status
+Known limitations
+How to Play
+
+Basic controls
+How to launch/install the game
+The most important output is the actual game, not the report.
+
+FINAL EXECUTION DIRECTIVE
+Begin working immediately.
+
+First inspect the environment and repository.
+
+Then independently create an original game concept and implement it.
+
+You have creative authority over the game's name, story, protagonist, setting, visual identity, puzzles, environmental design, soundscape, and ending.
+
+Do not ask the user for feedback.
+
+Do not stop after preproduction.
+
+Do not stop after creating a playable prototype.
+
+Continue through implementation, integration, testing, optimization, and Android packaging.
+
+Favor practical engineering decisions that produce a complete, beautiful, atmospheric, memorable, and genuinely playable horror-mystery game.
+
+The ultimate goal is a single Android APK containing a polished, fully offline horror-mystery experience that the user can install and play.
+
+Start now.

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The survey lantern, which is the game's one object.
+  Drawn as a vector so it stays crisp at every launcher density.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Warm halo behind the glass -->
+    <path
+        android:fillColor="#33E8B476"
+        android:pathData="M54,56m-24,0a24,24 0 1,0 48,0a24,24 0 1,0 -48,0" />
+    <path
+        android:fillColor="#59E8B476"
+        android:pathData="M54,56m-15,0a15,15 0 1,0 30,0a15,15 0 1,0 -30,0" />
+
+    <!-- Carry handle -->
+    <path
+        android:strokeColor="#C9CFD4"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M44,32 L44,26 Q54,19 64,26 L64,32" />
+
+    <!-- Lamp housing: cap, body, base -->
+    <path
+        android:fillColor="#B9C2C9"
+        android:pathData="M38,32 L70,32 L68,38 L40,38 Z" />
+    <path
+        android:fillColor="#8E979E"
+        android:pathData="M40,38 L68,38 L68,72 L40,72 Z" />
+    <path
+        android:fillColor="#D6DDE2"
+        android:pathData="M40,38 L47,38 L47,72 L40,72 Z" />
+    <path
+        android:fillColor="#B9C2C9"
+        android:pathData="M36,72 L72,72 L72,80 L36,80 Z" />
+
+    <!-- The glass, lit -->
+    <path
+        android:fillColor="#FFD9A0"
+        android:pathData="M47,44 L61,44 L61,66 L47,66 Z" />
+    <path
+        android:fillColor="#FFF4DF"
+        android:pathData="M50,48 L58,48 L58,62 L50,62 Z" />
+
+    <!-- Fresnel rings -->
+    <path
+        android:strokeColor="#99A6845A"
+        android:strokeWidth="1.4"
+        android:fillColor="#00000000"
+        android:pathData="M47,51 L61,51 M47,55 L61,55 M47,59 L61,59" />
+</vector>

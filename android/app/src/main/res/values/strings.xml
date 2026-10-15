@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">What the Water Kept</string>
+    <string name="title_activity_main">What the Water Kept</string>
+    <string name="package_name">com.corranmill.whatthewaterkept</string>
+    <string name="custom_url_scheme">com.corranmill.whatthewaterkept</string>
+</resources>

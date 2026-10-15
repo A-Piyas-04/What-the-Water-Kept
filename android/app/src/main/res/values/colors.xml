@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF101820</color>
+    <color name="colorPrimaryDark">#FF05080B</color>
+    <color name="colorAccent">#FFE8B476</color>
+    <!-- The same near-black the game clears its canvas to, so there is no
+         flash of a different colour between the splash and the first frame. -->
+    <color name="gameBackground">#FF05080B</color>
+</resources>
